@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require("../models/User");
 const { generateToken } = require('../helpers/tokens');
 const { jwt } = require('jsonwebtoken')
+const { sendVerificationEmail } = require('../helpers/mailers')
 exports.register = async (req, res) => {
     try {
         const { first_name, last_name, email, password, username, bYear, bMonth, bDay, gender } = req.body;
@@ -43,7 +44,7 @@ exports.register = async (req, res) => {
             last_name,
             email,
             password: cryptedPassword,
-            username, newUsername,
+            username: newUsername,
             bYear,
             bMonth,
             bDay,
@@ -51,7 +52,7 @@ exports.register = async (req, res) => {
         }).save();
 
         const emailVerificationToken = generateToken({ id: user._id.toString() }, "30m");
-        const url = `${process.env.BASE_URL}/activate/${emailVerificationToken}`
+        const url = `${process.env.BASE_URL}/activate/${emailVerificationToken}`;
         sendVerificationEmail(user.email, user.first_name, url);
         const token = generateToken({ id: user._id.toString() }, "7d")
         res.send({
@@ -64,7 +65,7 @@ exports.register = async (req, res) => {
             verified: user.verified,
             message: "Register Success ! please activate your email to start"
         })
-        res.json(user)
+
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
@@ -107,7 +108,6 @@ exports.login = async (req, res) => {
             last_name: user.last_name,
             token: token,
             verified: user.verified,
-            message: "Register Success ! please activate your email to start"
         });
 
     } catch (error) {

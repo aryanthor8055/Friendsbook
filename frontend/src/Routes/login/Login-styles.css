@@ -1,5 +1,6 @@
+/*-------login-----*/
 .login_wrapper {
-    background-color: var(--bg-secondary);
+    background: var(--bg-secondary);
 }
 
 .login_wrap {
@@ -14,7 +15,6 @@
 
 .login_1 span {
     font-size: 20px;
-
 }
 
 .login_2 {
@@ -27,14 +27,14 @@
     align-items: center;
     gap: 1rem;
     background: var(--bg-primary);
-    box-shadow: 0, 1px, 2px var(--shadow-1);
+    box-shadow: 0 1px 2px var(--shadow-1);
     padding: 1rem;
     padding-bottom: 2rem;
     width: 350px;
     height: fit-content;
     margin: 1rem auto;
+    user-select: none;
     border-radius: 10px;
-
 }
 
 .login_2_wrap button {
@@ -66,14 +66,15 @@
     font-weight: 600 !important;
     font-size: 17px !important;
     margin-top: 1rem;
-
 }
 
 .sign_extra {
     font-size: 15px;
 }
 
-/*...........Register........*/
+/*-------login-----*/
+
+/*-----Register---------*/
 .register {
     position: absolute;
     top: 50%;
@@ -93,8 +94,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
     gap: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--bg-third);
 }
 
@@ -119,7 +120,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .reg_line {
@@ -127,14 +127,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
 
 .reg_col {
     position: relative;
     align-self: flex-start;
+    margin-bottom: 10px;
     padding: 0 10px;
-
 }
 
 .reg_line_header {
@@ -143,7 +142,6 @@
     gap: 2px;
     font-size: 13px;
     color: var(--color-secondary);
-
 }
 
 .reg_line_header i {
@@ -196,12 +194,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin: 20px 0 10px 0;
 }
 
-/*............Footer..........*/
+/*-----Register---------*/
 
+/*----Footer------*/
 .login_footer {
     height: 22vh;
     background: var(--bg-primary);
@@ -250,22 +248,47 @@
     max-width: 900px;
 }
 
+/*----Footer------*/
 
-/* .......media Queries.....*/
+/*----dob and gender errors-----*/
+.reg_grid .input_error {
+    width: 300px;
+    position: absolute;
+    top: 70px;
+}
+
+.input_error_select_large {
+    left: -90.5%;
+    top: 15px !important;
+}
+
+.input_error_gender_select_large {
+    left: -95%;
+    top: 15px !important;
+    margin-top: 12px;
+}
+
+
+/*----dob and gender errors-----*/
+
+/*........Error and success styles......*/
+.error_text {
+    color: #b94a48;
+}
+
+.success_text {
+    color: var(--green-color);
+}
+
+
+/*----Media queries--------------*/
 @media (min-width: 539px) {
     .login_footer_wrap {
         max-width: 520px;
     }
-}
-
-@media (min-width: 650px) {
-    .login_footer_wrap {
-        max-width: 650px;
-    }
 
     .register {
         width: 400px;
-
     }
 
     .reg_line {
@@ -276,6 +299,16 @@
     .reg_grid label {
         width: 110px;
     }
+
+    .reg_grid .input_error {
+        width: 350px;
+    }
+}
+
+@media (min-width: 650px) {
+    .login_footer_wrap {
+        max-width: 650px;
+    }
 }
 
 @media (min-width: 850px) {
@@ -284,7 +317,6 @@
         align-items: center;
         max-width: 1000px;
         margin: 0 auto;
-
     }
 
     .login_1 {
@@ -315,3 +347,5 @@
         max-width: 900px;
     }
 }
+
+/*----Media queries--------------*/
