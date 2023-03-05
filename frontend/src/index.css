@@ -3,20 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 }
-
 html {
   overflow-y: scroll;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 :root {
   --bg-primary: #fff;
   --bg-secondary: #f0f2f5;
@@ -28,6 +24,7 @@ a {
   --dark-bg-primary: #18191a;
   --dark-bg-secondary: #242526;
   --dark-bg-third: #3a3b3c;
+  --dark-bg-forth: #3a3b3c;
   --dark-color-primary: #242526;
   --dark-color-secondary: #b0b3b8;
   --blue-color: #1876f2;
@@ -40,13 +37,12 @@ a {
   --shadow-inset: rgba(255, 255, 255, 0.5);
 }
 
-/*............button......*/
-
+/*----Buttons----*/
 .blue_btn {
   border: none;
   outline: none;
   background: var(--blue-color);
-  padding: 0.5px 12px;
+  padding: 8.5px 12px;
   border-radius: 7px;
   font-family: inherit;
   font-weight: 600;
@@ -58,13 +54,103 @@ a {
   gap: 6px;
   cursor: pointer;
 }
-
+.light_blue_btn {
+  border: none;
+  outline: none;
+  background: var(--light-blue-color);
+  padding: 8.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.gray_btn {
+  border: none;
+  outline: none;
+  background: var(--bg-secondary);
+  padding: 8.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.blue_btn,
+.gray_btn span {
+  transform: translateY(-1px);
+}
+/*----Buttons----*/
 .blur {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  background: rgba(255, 255, 255, 0.768);
   bottom: 0;
-  background: rgba(255, 255, 255, 0.760);
-  z-index: 99;
+  z-index: 9999999999;
 }
+
+/*----Buttons----*/
+
+/*-----Hovers-----*/
+.hover1:hover {
+  background: var(--bg-secondary);
+}
+.hover2:hover {
+  background: var(--bg-third);
+}
+.hover3:hover {
+  background: #d4d6da3a;
+}
+
+/*-----Hovers-----*/
+.card {
+  height: 500px;
+  width: 500px;
+  background: red;
+}
+
+/*----Scrollbar----*/
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #aeaeafa1;
+  border-radius: 5px;
+}
+/*----Scrollbar----*/
+
+/*---Circles------*/
+.small_circle {
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  background: var(--bg-third);
+  cursor: pointer;
+}
+/*---Circles------*/
+
+/*----filters---*/
+.filter_blue {
+  filter: invert(39%) sepia(57%) saturate(200%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(147.75%) hue-rotate(202deg)
+    brightness(97%) contrast(96%);
+}
+/*----filters---*/
